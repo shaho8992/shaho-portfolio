@@ -1,54 +1,38 @@
 "use client";
 import { motion } from 'framer-motion';
 
+// زانیاری پڕۆژەکان بە شێوەی لیست
 const projects = [
-  { 
-    title: "سەکۆی بازرگانی هۆشمەند", 
-    category: "Full-Stack Development",
-    desc: "دروستکردنی سیستەمێکی فرۆشتن بە بەکارهێنانی تەکنەلۆژیای سەردەم.",
-    img: "bg-gradient-to-br from-blue-500 to-purple-600"
-  },
-  { 
-    title: "ئەپی تەندروستی ژیر", 
-    category: "Mobile First Design",
-    desc: "ئەپڵیکەیشنێک بۆ چاودێریکردنی باری تەندروستی ڕۆژانە.",
-    img: "bg-gradient-to-br from-emerald-400 to-cyan-500"
-  },
-  { 
-    title: "سیستەمی بەڕێوەبردنی فێربوون", 
-    category: "SaaS Application",
-    desc: "پلاتفۆرمێک بۆ خوێندنی ئۆنلاین و تاقیکردنەوەکان.",
-    img: "bg-gradient-to-br from-orange-400 to-rose-500"
-  },
+  { title: "فرۆشگای ئۆنلاین", desc: "دروستکراو بە Next.js و Stripe", color: "bg-blue-500" },
+  { title: "ئەپی تێبینییەکان", desc: "بەکارهێنانی Firebase بۆ داتابەیس", color: "bg-emerald-500" },
+  { title: "وێبسایتی هەواڵ", desc: "دیزاینێکی خێرا بە Tailwind", color: "bg-indigo-500" },
 ];
 
 export default function Projects() {
   return (
-    <div className="min-h-screen bg-white pt-32 pb-20 px-6" dir="rtl">
+    <div className="min-h-screen pt-32 pb-20 px-4 md:px-6 bg-slate-50" dir="rtl">
       <div className="max-w-7xl mx-auto">
-        <header className="mb-20 text-right">
-          <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-4">کارە هەڵبژێردراوەکان</h2>
-          <div className="h-2 w-20 bg-blue-600 rounded-full"></div>
-        </header>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+        {/* سەردێڕی لاپەڕەی پڕۆژەکان */}
+        <h1 className="text-3xl md:text-5xl font-black text-center mb-16">کارە ئەنجامدراوەکان</h1>
+        
+        {/* پیشاندانی پڕۆژەکان - لە مۆبایل یەک بە یەک نیشان دەدرێن */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((p, i) => (
             <motion.div 
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
+              whileHover={{ y: -10 }} // کاتێک ماوسەکە دەچێتە سەری کەمێک بەرز دەبێتەوە
               key={i} 
-              className="group cursor-pointer"
+              className="bg-white rounded-[2rem] overflow-hidden shadow-sm border border-slate-100 p-4"
             >
-              <div className={`h-80 ${p.img} rounded-[2rem] mb-6 overflow-hidden relative shadow-2xl shadow-slate-200`}>
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-all duration-500"></div>
+              {/* وێنەی کارتۆنی پڕۆژەکە - دەتوانیت لێرە وێنە دابنێیت */}
+              <div className={`h-48 ${p.color} rounded-[1.5rem] mb-6 shadow-inner animate-pulse opacity-80`}></div>
+              
+              <div className="px-2">
+                <h3 className="text-xl font-bold mb-2">{p.title}</h3>
+                <p className="text-slate-500 text-sm mb-6 leading-relaxed">{p.desc}</p>
+                <button className="text-blue-600 font-bold hover:underline text-sm italic">
+                  بینینی وردەکاری ←
+                </button>
               </div>
-              <span className="text-sm font-bold text-blue-600 uppercase tracking-widest">{p.category}</span>
-              <h3 className="text-2xl font-bold mt-2 mb-3 group-hover:text-blue-600 transition">{p.title}</h3>
-              <p className="text-slate-500 leading-relaxed mb-4">{p.desc}</p>
-              <button className="flex items-center gap-2 font-bold text-slate-900 border-b-2 border-slate-900 group-hover:text-blue-600 group-hover:border-blue-600 transition-all">
-                بینینی وردەکاری
-              </button>
             </motion.div>
           ))}
         </div>
