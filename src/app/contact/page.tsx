@@ -45,11 +45,11 @@ export default function Contact() {
           <div className="space-y-6">
             <div className="flex items-center gap-4">
               <div className="p-3 bg-white/10 rounded-xl text-blue-400"><Mail size={20} /></div>
-              <p className="text-sm">hello@example.com</p>
+              <p className="text-sm">shaho2017ranya@gmail.com</p>
             </div>
             <div className="flex items-center gap-4">
               <div className="p-3 bg-white/10 rounded-xl text-blue-400"><MapPin size={20} /></div>
-              <p className="text-sm">کوردستان، سلێمانی</p>
+              <p className="text-sm">Kurdistan - Sulaymani - Ranya  </p>
             </div>
           </div>
         </div>
@@ -59,7 +59,7 @@ export default function Contact() {
           <form onSubmit={handleSubmit} className="space-y-5">
             <div>
               <label className="block text-sm font-bold text-slate-700 mb-2">ناوەکەت</label>
-              <input type="text" name="name" required className="w-full p-4 rounded-xl bg-slate-50 border border-slate-200 outline-none focus:ring-2 focus:ring-blue-500 transition" placeholder="ئاراس..." />
+              <input type="text" name="name" required className="w-full p-4 rounded-xl bg-slate-50 border border-slate-200 outline-none focus:ring-2 focus:ring-blue-500 transition" placeholder="ناوەکەت لێرە بنوسە" />
             </div>
             <div>
               <label className="block text-sm font-bold text-slate-700 mb-2">ئیمەیڵ</label>

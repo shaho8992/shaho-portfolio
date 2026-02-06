@@ -8,7 +8,7 @@ export default function Navbar() {
         
         {/* لۆگۆی سایتەکە - لای ڕاست */}
         <Link href="/" className="text-xl md:text-2xl font-black text-blue-600">
-          PORTFOLIO<span className="text-slate-900">.</span>
+          PORTFOLIO<span className="text-slate-900"></span>
         </Link>
         
         {/* لینکەکان - تەنها لە شاشەی گەورە دیارن (hidden md:flex) */}
